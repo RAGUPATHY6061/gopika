@@ -1,12 +1,5 @@
-import {
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-} from 'recharts';
+import React from 'react';
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 const AreaChartComponent = ({ data }) => {
   return (
@@ -21,4 +14,5 @@ const AreaChartComponent = ({ data }) => {
     </ResponsiveContainer>
   );
 };
+
 export default AreaChartComponent;

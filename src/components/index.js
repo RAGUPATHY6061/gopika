@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 import SearchContainer from './SearchContainer';
 import SmallSidebar from './SmallSidebar';
 import StatsContainer from './StatsContainer';
-
+import Loading from './Loading';
 export {
   Logo,
   FormRow,
@@ -20,4 +20,5 @@ export {
   SearchContainer,
   StatsContainer,
   ChartsContainer,
+  Loading,
 };

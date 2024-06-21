@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';  // Import Firestore
+import { getFirestore, initializeFirestore } from 'firebase/firestore'; // Import initializeFirestore
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,14 +19,19 @@ const firebaseConfig = {
   measurementId: "G-5VGNQPLW82"
 };
 
-
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Analytics if needed
+const analytics = getAnalytics(app);
+
+// Initialize Firestore with timestampsInSnapshots settings
+const db = initializeFirestore(app, { 
+  experimentalForceLongPolling: true, 
+  timestampsInSnapshots: true 
+});
 
 // Initialize Firebase Authentication
 const auth = getAuth(app);
 
-// Initialize Firestore
-const db = getFirestore(app);
-
 export { auth, db };
-
